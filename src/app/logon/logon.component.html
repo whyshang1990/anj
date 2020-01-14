@@ -1,0 +1,25 @@
+<p>logon works!</p>
+<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5" nzRequired="true">用户名</nz-form-label>
+        <nz-form-control [nzSpan]="19" nzErrorTip="Please input your username!">
+            <nz-input-group nzPrefixIcon="user">
+                <input type="text" nz-input formControlName="userName" placeholder="Username" />
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5" nzRequired="true">密码</nz-form-label>
+        <nz-form-control [nzSpan]="19" nzErrorTip="Please input your password!">
+            <nz-input-group nzPrefixIcon="lock">
+                <input type="password" nz-input formControlName="password" placeholder="Password" />
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <label nz-checkbox formControlName="remember"><span>Remember me</span></label>
+            <button nz-button class="login-form-button" [nzType]="'primary'">Log in</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
