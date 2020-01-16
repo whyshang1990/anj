@@ -1,4 +1,4 @@
-<p>logon works!</p>
+<p>register works!</p>
 <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
     <nz-form-item>
         <nz-form-label [nzSpan]="5" nzRequired="true">用户名</nz-form-label>
@@ -18,9 +18,8 @@
     </nz-form-item>
     <nz-form-item>
         <nz-form-control>
-            <label nz-checkbox formControlName="remember"><span>Remember me</span></label>
-            <a class="login-form-sign-up" routerLink="/register">Sign Up</a>
-            <button nz-button class="login-form-button" [nzType]="'primary'" [disabled]="validateForm.invalid">Log in</button>
+            <a class="register-sign-in" routerLink="/logon">Sign In</a>
+            <button nz-button class="register-form-button" [nzType]="'primary'" [disabled]="validateForm.invalid">Log in</button>
         </nz-form-control>
     </nz-form-item>
 </form>

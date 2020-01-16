@@ -9,13 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { LogonComponent } from './logon/logon.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RegisterComponent } from './register/register.component';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogonComponent
+    LogonComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
