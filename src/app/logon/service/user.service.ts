@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { BaseResponse } from '../common/BaseResponse';
-import { User } from '../common/User';
+import { BaseResponse } from '../../common/BaseResponse';
+import { User } from '../../common/User';
 
 const urlPre: string = "/user"
 

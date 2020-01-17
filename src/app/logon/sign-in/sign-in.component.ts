@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../service/user.service';
-import { BaseResponse } from '../common/BaseResponse';
+import { BaseResponse } from 'src/app/common/BaseResponse';
+import { User } from 'src/app/common/User';
+import { UserService } from 'src/app/logon/service/user.service';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Router } from '@angular/router';
-import { User } from '../common/User';
 
 @Component({
-  selector: 'app-logon',
-  templateUrl: './logon.component.html',
-  styleUrls: ['./logon.component.css']
+  selector: 'app-sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.css']
 })
-export class LogonComponent implements OnInit {
+export class SignInComponent implements OnInit {
   validateForm: FormGroup;
   response: BaseResponse<any>;
 
