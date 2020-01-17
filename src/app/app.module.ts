@@ -11,6 +11,7 @@ import en from '@angular/common/locales/en';
 import { LogonComponent } from './logon/logon.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
+import { AppIndexComponent } from './app-index/app-index.component';
 
 registerLocaleData(en);
 
@@ -18,7 +19,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     LogonComponent,
-    RegisterComponent
+    RegisterComponent,
+    AppIndexComponent
   ],
   imports: [
     BrowserModule,
