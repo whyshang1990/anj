@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { BaseResponse } from 'src/app/common/BaseResponse';
+import { BaseResponse } from 'src/app/shared/BaseResponse';
 import { UserService } from 'src/app/logon/service/user.service';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Router } from '@angular/router';
