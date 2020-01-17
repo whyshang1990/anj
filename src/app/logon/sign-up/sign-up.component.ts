@@ -4,6 +4,7 @@ import { BaseResponse } from 'src/app/shared/BaseResponse';
 import { UserService } from 'src/app/logon/service/user.service';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Router } from '@angular/router';
+import { User } from 'src/app/shared/User';
 
 @Component({
   selector: 'app-sign-up',
@@ -19,10 +20,12 @@ export class SignUpComponent implements OnInit {
       this.validateForm.controls[i].markAsDirty();
       this.validateForm.controls[i].updateValueAndValidity();
     }
-    this.userService.regist(this.validateForm.value).subscribe(
+    let user: User = new User(this.validateForm.value.username, this.validateForm.value.password)
+    console.log(this.validateForm.value.username)
+    this.userService.regist(user).subscribe(
       response => {
         this.response = response;
-        if(this.response.code === 1 ) {
+        if(this.response.code === 1) {
           this.message.create('success', "注册成功");
           this.router.navigate(["/logon"])
         } else {
@@ -43,7 +46,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
     this.validateForm = this.formBuilder.group({
-      userName: [null, [Validators.required]],
+      username: [null, [Validators.required]],
       password: [null, [Validators.required]]
     });
   }
