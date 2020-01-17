@@ -1,19 +1,39 @@
-<p>app-index works!</p>
-<nz-layout>
-    <nz-header>header</nz-header>
+<nz-layout class="app-index">
+    <nz-header>
+        <div class="logo"></div>
+        <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
+            <li nz-menu-item nzSelected>主页</li>
+            <li nz-menu-item>管理</li>
+            <li nz-menu-item>配置工具</li>
+            <li class="user">
+                <nz-avatar [nzSize]="30" nzIcon="user"></nz-avatar>
+            </li>
+        </ul>
+        
+    </nz-header>
 
     <nz-layout>
-        <nz-sider>
-
+        <nz-sider nzWidth="200px" nzTheme="light">
+            <ul nz-menu nzMode="inline" class="sider-menu">
+                <li nz-submenu nzOpen nzIcon="user" nzTitle="subnav 1">
+                  <ul>
+                    <li nz-menu-item nzSelected>option1</li>
+                    <li nz-menu-item>option2</li>
+                    <li nz-menu-item>option3</li>
+                    <li nz-menu-item>option4</li>
+                  </ul>
+                </li>
+            </ul>
         </nz-sider>
+        
+        <nz-layout class="inner-layout">
+            <nz-breadcrumb>
+                <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+                <nz-breadcrumb-item>Welcome</nz-breadcrumb-item>
+              </nz-breadcrumb>
+              <nz-content>首页-欢迎页</nz-content>
+        </nz-layout>
     </nz-layout>
-    <nz-layout>
-        <nz-breadcrumb>
-            <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-            <nz-breadcrumb-item>List</nz-breadcrumb-item>
-            <nz-breadcrumb-item>App</nz-breadcrumb-item>
-          </nz-breadcrumb>
-          <nz-content>Content</nz-content>
-    </nz-layout>
+    
     <nz-footer>footer</nz-footer>
 </nz-layout>
