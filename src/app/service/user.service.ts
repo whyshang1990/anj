@@ -19,8 +19,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  login(): Observable<BaseResponse<any>> {
-    return this.http.post<BaseResponse<any>>(this.logonUrl, this.params);
+  login(user: User): Observable<BaseResponse<any>> {
+    return this.http.post<BaseResponse<any>>(this.logonUrl, user);
   }
 
   regist(user: User): Observable<BaseResponse<any>> {
