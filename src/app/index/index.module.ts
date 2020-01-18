@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AccountBookComponent } from './account-book/account-book.component';
 
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,8 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgZorroAntdModule,
     IndexRoutingModule
   ]
