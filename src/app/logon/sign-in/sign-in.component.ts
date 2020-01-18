@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
         this.response = response;
         if(this.response.code === 1 ) {
           this.message.create('success', "登录成功");
-          this.router.navigate(["/index"])
+          this.router.navigate(["/index/home"])
         } else {
           this.message.create('warning', "登录失败");
         }
