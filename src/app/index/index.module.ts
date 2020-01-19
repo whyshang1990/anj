@@ -9,6 +9,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IndexHeaderComponent } from './shared/index-header/index-header.component';
 import { IndexComponent } from './index.component';
+import { AddTranscationComponent } from './account-book/add-transcation/add-transcation.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { IndexComponent } from './index.component';
     HomeComponent,
     AccountBookComponent,
     IndexHeaderComponent,
-    IndexComponent
+    IndexComponent,
+    AddTranscationComponent
   ],
   imports: [
     CommonModule,
