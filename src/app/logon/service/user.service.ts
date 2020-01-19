@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { BaseResponse } from '../../shared/BaseResponse';
 import { User } from '../../shared/User';
 
-const urlPre: string = "/user"
+const urlPre: string = "http://localhost:8889/api/v1/user"
 
 @Injectable({
   providedIn: 'root'
