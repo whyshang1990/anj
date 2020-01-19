@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NzCascaderOption } from 'ng-zorro-antd';
+import { AccountService } from '../../service/account.service';
+
 
 
 const options = [
@@ -71,10 +73,13 @@ export class AddTranscationComponent implements OnInit {
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter();
 
   reactiveForm: FormGroup;
-  nzOptions: NzCascaderOption[] = options;
+  nzOptions: NzCascaderOption[];
   values: string[] | null = null;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private accountService: AccountService
+  ) { }
 
   ngOnInit() {
     this.reactiveForm = this.formBuilder.group({
@@ -82,7 +87,8 @@ export class AddTranscationComponent implements OnInit {
       category: [null, [Validators.required]],
       subCategory: [null, [Validators.required]],
       remarks: [null]
-    })
+    });
+    this.nzOptions = this.accountService.getOptions();
   }
 
   private closeTrans(): void {
