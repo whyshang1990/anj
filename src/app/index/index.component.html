@@ -1,14 +1,6 @@
 <nz-layout class="app-index">
     <nz-header>
-        <div class="logo"></div>
-        <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-            <li nz-menu-item nzSelected routerLink="./home">主页</li>
-            <li nz-menu-item routerLink="./account-book">账本</li>
-            <li nz-menu-item>配置工具</li>
-            <li class="user">
-                <nz-avatar [nzSize]="30" nzIcon="user"></nz-avatar>
-            </li>
-        </ul>
+        <app-index-header></app-index-header>
     </nz-header>
 
     <nz-layout>

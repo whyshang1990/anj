@@ -2,19 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { IndexRoutingModule } from './index-routing.module';
-import { AppIndexComponent } from './app-index/app-index.component';
 import { HomeComponent } from './home/home.component';
 import { AccountBookComponent } from './account-book/account-book.component';
 
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IndexHeaderComponent } from './shared/index-header/index-header.component';
+import { IndexComponent } from './index.component';
 
 
 @NgModule({
   declarations: [
-    AppIndexComponent,
     HomeComponent,
-    AccountBookComponent
+    AccountBookComponent,
+    IndexHeaderComponent,
+    IndexComponent
   ],
   imports: [
     CommonModule,
