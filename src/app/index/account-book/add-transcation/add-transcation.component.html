@@ -18,7 +18,7 @@
         <nz-form-item>
             <nz-form-label nzRequired="true" >类别</nz-form-label>
             <nz-form-control>
-                <nz-cascader [nzExpandTrigger]="'hover'" [nzOptions]="nzOptions"
+                <nz-cascader [nzExpandTrigger]="'hover'" [nzLoadData]="loadData"
                     [(ngModel)]="values" (ngModelChange)="onChanges($event)" 
                     [nzValueProperty]="'name'"
                     [nzLabelProperty]="'name'"

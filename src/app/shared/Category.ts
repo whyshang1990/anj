@@ -1,9 +1,11 @@
 export class Category{
-    uuid: string;
-    name: string;
+    value: string;
+    lable: string;
+    isLeaf?: boolean;
 
-    constructor(uuid: string, name: string) {
-        this.uuid = uuid;
-        this.name = name;
+    constructor(value: string, lable: string, isLeaf: boolean) {
+        this.value = value;
+        this.lable = lable;
+        this.isLeaf = isLeaf;
     };
 }

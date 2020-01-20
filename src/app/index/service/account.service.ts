@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NzCascaderOption } from 'ng-zorro-antd';
 import { BaseResponse } from 'src/app/shared/BaseResponse';
 import { Observable } from 'rxjs';
-import { TopCategory } from 'src/app/shared/TopCategory';
 
 const urlPre: string = "http://localhost:8889/api/v1/category"
 
@@ -34,17 +32,4 @@ export class AccountService {
     });
     
   }
-
-  // private caToOp(topCategory: TopCategory): NzCascaderOption {
-  //   let option: NzCascaderOption;
-  //   option.value = topCategory.name;
-  //   option.label = topCategory.name;
-  //   for(let child of topCategory.children) {
-  //     option.children.push({
-  //       value: child.name,
-  //       label: child.name
-  //     })
-  //   }
-  //   return option
-  // }
 }

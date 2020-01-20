@@ -2,50 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NzCascaderOption } from 'ng-zorro-antd';
 import { AccountService } from '../../service/account.service';
+import { resolve } from 'url';
+import { SubCategory } from 'src/app/shared/SubCategory';
+import { Category } from 'src/app/shared/Category';
 
-
-
-const options = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [
-      {
-        value: 'hangzhou',
-        label: 'Hangzhou',
-        children: [
-          {
-            value: 'xihu',
-            label: 'West Lake',
-            isLeaf: true
-          }
-        ]
-      },
-      {
-        value: 'ningbo',
-        label: 'Ningbo',
-        isLeaf: true
-      }
-    ]
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [
-      {
-        value: 'nanjing',
-        label: 'Nanjing',
-        children: [
-          {
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-            isLeaf: true
-          }
-        ]
-      }
-    ]
-  }
-];
 
 @Component({
   selector: 'app-add-transcation',
@@ -73,8 +33,10 @@ export class AddTranscationComponent implements OnInit {
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter();
 
   reactiveForm: FormGroup;
-  nzOptions: NzCascaderOption[];
   values: string[] | null = null;
+  topCategories: Array<Category>;
+  subCategories: { [key: string], Array<SubCategory> };
+  nzOptions: NzCascaderOption[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -88,7 +50,18 @@ export class AddTranscationComponent implements OnInit {
       subCategory: [null, [Validators.required]],
       remarks: [null]
     });
-    this.nzOptions = this.accountService.getOptions();
+  }
+
+  loadData(node: NzCascaderOption, index: number): PromiseLike<void> {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        if (index < 0) {
+          node.children = topCategories;
+        } else if (index == 0) {
+
+        }
+      }))
+    });
   }
 
   private closeTrans(): void {
